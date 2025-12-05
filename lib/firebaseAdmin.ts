@@ -1,23 +1,35 @@
-// lib/firebaseAdmin.ts
-import { initializeApp, getApps, cert } from "firebase-admin/app";
+import { cert, getApps, initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import * as fs from "fs";
-import * as path from "path";
 
-// Caminho absoluto para o JSON enviado por você
-const serviceAccountPath = path.join(
-  process.cwd(),
-  "xeque-site-c35b2-firebase-adminsdk-fbsvc-0193dc8ae7.json"
-);
+// ===================================================================
+// Firebase Admin SDK (funciona localmente e no Vercel)
+// ===================================================================
+const rawPrivateKey = process.env.FIREBASE_PRIVATE_KEY;
 
-const serviceAccount = JSON.parse(
-  fs.readFileSync(serviceAccountPath, "utf8")
-);
+// 1. Segurança: impede erro silencioso se a chave não estiver configurada.
+if (!rawPrivateKey) {
+  throw new Error("FIREBASE_PRIVATE_KEY não encontrada nas variáveis de ambiente.");
+}
+
+// 2. CORREÇÃO CRÍTICA: 
+// A variável de ambiente armazena '\n' como caracteres literais. 
+// O formato PEM (que a função cert espera) requer quebras de linha reais.
+// Este método substitui o literal "\n" pela quebra de linha real.
+const correctedPrivateKey = rawPrivateKey.replace(/\\n/g, '\n');
 
 if (!getApps().length) {
   initializeApp({
-    credential: cert(serviceAccount),
+    credential: cert({
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+      // 3. Usa a chave corrigida
+      privateKey: correctedPrivateKey, 
+    }),
   });
 }
 
+// Exporta a instância do Firestore para uso em funções de backend
 export const adminDB = getFirestore();
+
+
+
