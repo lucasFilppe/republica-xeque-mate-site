@@ -1,42 +1,36 @@
-// components/shared/Header.tsx
-
-'use client'; // 1. Torna o componente interativo (permite usar useState)
+'use client';
 
 import Link from 'next/link';
 import Image from "next/image";
-import { useState } from 'react'; // 2. Importa o hook useState
-import { Menu, X } from 'lucide-react'; // Ícones para abrir e fechar o menu
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'A República', href: '/a-republica' },
+  { name: 'Sobre', href: '/' },
+  { name: 'História', href: '/a-republica' },
+  { name: 'Ex Alunos', href: '/memorial' },
+  
   { name: 'A Casa', href: '/a-casa' },
-  { name: 'Processo Seletivo', href: '/processo-seletivo' },
-  { name: 'Memorial', href: '/memorial' },
+  { name: 'Vagas', href: '/processo-seletivo' },
   { name: 'Experiências', href: '/experiencias' },
   { name: 'Contato', href: '/contato' },
 ];
 
 export const Header = () => {
-  // 3. Estado para controlar se o menu mobile está aberto
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // 4. Função para alternar o estado do menu
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="bg-[#1A1A1A] shadow-md sticky top-0 z-50">
+    <header className="bg-rebu-secondary shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
 
-        {/* Logo da República */}
+        {/* Logo */}
         <Link href="/" className="flex items-center p-1">
-          <div className="relative w-15 h-15 sm:w-32 sm:h-32 md:w-28 md:h-28 lg:w-24 lg:h-24 
-                  rounded-full overflow-hidden transition-transform duration-300 hover:scale-105">
+          <div className="relative w-16 h-16 sm:w-24 sm:h-24 md:w-20 md:h-20 lg:w-20 lg:h-20 
+              rounded-full overflow-hidden  border-rebu-primary">
             <Image
-              src="/logo-rebu.jpg"
-              alt="Logo REBU - República Estudantil"
+              src="/logo-xeque.jpg"
+              alt="Logo xeque-mate - República Estudantil"
               fill
               className="object-cover"
               priority
@@ -44,35 +38,41 @@ export const Header = () => {
           </div>
         </Link>
 
-
-        {/* Navegação Desktop - visível em telas maiores */}
+        {/* Navegação Desktop */}
         <nav className="hidden md:flex space-x-6">
           {navItems.map((item) => (
-            <Link key={item.name} href={item.href} className="text-white text-2xl hover:text-[#FF8C00] font-medium transition duration-300">
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-rebu-soft text-xl hover:text-rebu-primary font-medium transition duration-300"
+            >
               {item.name}
             </Link>
           ))}
         </nav>
 
-        {/* Botão de Menu para mobile */}
+        {/* Botão Mobile */}
         <button
-          className="md:hidden text-white focus:outline-none"
-          onClick={toggleMenu} // 5. Adiciona o evento de clique
+          className="md:hidden text-rebu-soft focus:outline-none"
+          onClick={toggleMenu}
           aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
-          {/* Alterna entre ícone X (fechar) e Menu (abrir) */}
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* 6. Menu Dropdown Mobile - Visível apenas quando isMenuOpen é true */}
-      <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:hidden bg-[#2C2C2C] flex-col space-y-2 py-3 px-4 shadow-xl`}>
+      {/* Menu Mobile */}
+      <div
+        className={`${isMenuOpen ? 'flex' : 'hidden'} 
+        md:hidden bg-rebu-secondary flex-col space-y-2 py-3 px-4 shadow-xl border-t border-rebu-primary`}
+      >
         {navItems.map((item) => (
           <Link
             key={item.name}
             href={item.href}
-            onClick={toggleMenu} // Fecha o menu ao clicar em um link
-            className="text-white text-lg block py-2 px-3 hover:bg-[#3A3A3A] hover:text-[#FF8C00] transition duration-200 rounded-md"
+            onClick={toggleMenu}
+            className="text-rebu-soft text-lg block py-2 px-3 
+              hover:bg-rebu-primary hover:text-black transition duration-200 rounded-md"
           >
             {item.name}
           </Link>
@@ -81,3 +81,4 @@ export const Header = () => {
     </header>
   );
 };
+

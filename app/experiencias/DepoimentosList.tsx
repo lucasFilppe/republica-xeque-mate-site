@@ -1,12 +1,10 @@
-// app/experiencias/DepoimentosList.tsx
-import { db } from "@/lib/firebase";
-import { collection, getDocs, orderBy, query, Timestamp } from "firebase/firestore";
+import { adminDB } from "@/lib/firebaseAdmin";
 import { unstable_noStore as noStore } from "next/cache";
-import { User, MessageSquare, Star } from 'lucide-react';
-import React from 'react';
+import { Timestamp } from "firebase-admin/firestore";
+import { MessageSquare, User } from "lucide-react";
 import Image from "next/image";
+import React from "react";
 
-// Interface para o objeto de depoimento final (limpo)
 interface Depoimento {
   id: string;
   autor: string;
@@ -16,65 +14,44 @@ interface Depoimento {
   createdAt: string;
 }
 
-// Interface para os dados brutos vindos do Firestore
-interface FirestoreDepoimentoData {
-  autorNome: string;
-  autorImagem?: string;
-  texto: string;
-  rating?: number;
-  createdAt?: Timestamp; // 👈 Corrigido: tipagem correta
-}
-
-const DepoimentoCard: React.FC<Depoimento> = ({ autor, autorImagem, periodo, texto, createdAt }) => (
-  <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#D44700]">
-    <div className="flex items-center justify-between mb-3">
-      <h3 className="text-xl font-bold text-[#1A1A1A] flex items-center">
-        {autorImagem ? (
-          <Image
-            src={autorImagem}
-            alt={autor}
-            width={32}
-            height={32}
-            className="w-10 h-10 rounded-full mr-2 object-cover"
-            unoptimized
-          />
-
-        ) : (
-          <User className="w-5 h-5 mr-2 text-gray-500" />
-        )}
-        <span className="text-sm font-medium text-gray-700">{autor}</span>
-      </h3>
-
-      <span className="text-xs text-gray-700">{createdAt}</span>
-
-    </div>
-    <p className="text-sm text-gray-500 italic mb-3">{periodo}</p>
-    <p className="text-gray-700 leading-relaxed">{texto}</p>
-  </div>
-);
-
 async function getDepoimentos(): Promise<Depoimento[]> {
+  // Desativa o cache do Next.js para esta função
   noStore();
 
-  const q = query(collection(db, "depoimentos"), orderBy("createdAt", "desc"));
-  const querySnapshot = await getDocs(q);
+  const snapshot = await adminDB
+    .collection("depoimentos")
+    .orderBy("createdAt", "desc")
+    .get();
 
-  return querySnapshot.docs.map(doc => {
-    const data = doc.data() as FirestoreDepoimentoData;
+  return snapshot.docs.map((doc) => {
+    const data = doc.data();
+    let imagemURL = data.autorImagem as string | undefined; // Assume que pode ser string ou undefined
+
+    // ⚠️ CORREÇÃO DE URL EXPLÍCITA ⚠️
+    if (imagemURL) {
+        // Verifica o placeholder INACESSÍVEL e protocolo HTTP
+        const isInvalidPlaceholder = imagemURL.includes('/profile/picture/0');
+        const isHttpProtocol = imagemURL.startsWith('http://');
+
+        if (isInvalidPlaceholder || isHttpProtocol) {
+            // Se for inválido ou inseguro, forçamos a URL a ser nula (undefined)
+            // para que o ícone de fallback (<User/>) seja renderizado.
+            imagemURL = undefined;
+        } else {
+            // Se for um URL válido, mas por acaso não tem HTTPS, forçamos para evitar mixed content
+            imagemURL = imagemURL.replace('http://', 'https://');
+        }
+    }
 
     return {
       id: doc.id,
       autor: data.autorNome || "Usuário Rebu",
-      autorImagem: data.autorImagem || undefined,
+      autorImagem: imagemURL, // Usa o URL corrigido ou undefined (para fallback)
       periodo: "Membro da Comunidade",
       texto: data.texto,
       createdAt: data.createdAt
         ? data.createdAt.toDate().toLocaleString("pt-BR", {
-          day: "2-digit",
-          month: "2-digit",
-          year: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
+          // ... formatação de data
         })
         : "Data desconhecida",
     };
@@ -85,18 +62,57 @@ export default async function DepoimentosList() {
   const depoimentosData = await getDepoimentos();
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <h2 className="text-4xl font-extrabold text-center text-[#1A1A1A] mb-12 flex items-center justify-center">
-          <MessageSquare className="w-8 h-8 mr-3 text-[#D44700]" /> O que Dizem sobre a Rebu
+    <section className="py-16 sm:py-20 bg-rebu-aceto">
+      <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-center text-rebu-secondary mb-10 sm:mb-12 flex items-center justify-center">
+          <MessageSquare className="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-rebu-primary" /> Depoimentos
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Alteração principal aqui: Usando 'grid-cols-1' no mobile e 'md:grid-cols-2' para tablets e desktops. */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           {depoimentosData.length > 0 ? (
-            depoimentosData.map((dep) => <DepoimentoCard key={dep.id} {...dep} />)
+            depoimentosData.map((dep) => (
+              <div
+                key={dep.id}
+                className="p-8 bg-white rounded-xl shadow-lg text-center border-b-4 border-rebu-primary"
+              >
+                <div className="flex items-center mb-3">
+                  {dep.autorImagem ? (
+                    // Trocamos o componente Image pelo elemento <img> padrão
+                    <img
+                      src={dep.autorImagem}
+                      alt={dep.autor}
+                      width={40}
+                      height={40}
+                      className="w-10 h-10 rounded-full mr-3 object-cover flex-shrink-0"
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full mr-3 bg-gray-200 flex items-center justify-center flex-shrink-0">
+                      <User className="w-5 h-5 text-rebu-secondary" />
+                    </div>
+                  )}
+                  <div className="overflow-hidden">
+                    <span className="text-base font-semibold text-rebu-secondary truncate block">
+                      {dep.autor}
+                    </span>
+                    <p className="text-xs text-rebu-secondary italic truncate">
+                      {dep.periodo}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-xs text-rebu-secondary mb-3 border-t pt-2 mt-2">
+                  Postado em: {dep.createdAt}
+                </p>
+                {/* Garantir que o texto quebre corretamente para evitar overflow */}
+                <p className="text-sm sm:text-base text-rebu-secondary leading-relaxed break-words">
+                  {dep.texto}
+                </p>
+              </div>
+            ))
           ) : (
-            <p className="col-span-2 text-center text-lg text-gray-500">
-              Seja a primeira a deixar um depoimento!
+            <p className="col-span-1 md:col-span-2 text-center text-base sm:text-lg text-rebu-secondary p-5 border rounded-lg bg-gray-50">
+              💌 Seja a primeira a deixar um depoimento! Compartilhe sua experiência.
             </p>
           )}
         </div>
@@ -104,3 +120,4 @@ export default async function DepoimentosList() {
     </section>
   );
 }
+

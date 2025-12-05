@@ -1,7 +1,6 @@
 'use client'; 
 
-import { Header } from '../../components/shared/Header'; 
-import { Footer } from '../../components/shared/Footer'; 
+
 import { useState } from 'react';
 import { Send } from 'lucide-react'; 
 import { useSession, signIn, signOut } from 'next-auth/react'; 
@@ -47,42 +46,17 @@ export default function ClientExperiencias({ children }: { children: React.React
         
         setIsSubmitting(false); 
     };
-  
-    if (status === 'loading') {
-      return (
-          <>
-              <Header />
-              <main className="flex-grow py-32 text-center text-[#1A1A1A]">
-                  <p className="text-xl font-semibold">Carregando status de autenticação...</p>
-              </main>
-              <Footer />
-          </>
-      );
-    }
+
 
 
   return (
     <>
-      <Header />
-
-      <main className="flex-grow">
         
-        {/* Seção 1: Hero - Chamada */}
-        <section className="py-20 bg-[#1A1A1A] text-white">
-          <div className="container mx-auto px-6 text-center max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-[#FF8C00]">
-              Experiências e Depoimentos
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-light">
-              Leia o que ex-moradoras e visitantes dizem sobre o legado da Rebu.
-            </p>
-          </div>
-        </section>
-        
+      
         {/* Seção 2: Formulário de Comentário */}
-        <section className="py-16 bg-[#F8F8F8]">
+        <section className="py-16 bg-rebu-acento">
           <div className="container mx-auto px-6 max-w-3xl">
-            <h2 className="text-3xl font-bold text-center text-[#1A1A1A] mb-8">
+            <h2 className="text-3xl font-extrabold text-center text-rebu-secondary mb-12">
               Compartilhe sua Experiência
             </h2>
 
@@ -107,7 +81,7 @@ export default function ClientExperiencias({ children }: { children: React.React
                         <button 
                             type="submit" 
                             disabled={isSubmitting}
-                            className={`w-full bg-[#D44700] text-white font-bold py-3 rounded-lg text-lg transition duration-300 transform 
+                            className={`w-full bg-rebu-primary text-white font-bold py-3 rounded-lg text-lg transition duration-300 transform 
                                 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#FF8C00] hover:scale-[1.01]'}`}
                         >
                             {isSubmitting ? 'Enviando...' : (<><Send className="w-5 h-5 mr-2" /> Enviar Depoimento</>)}
@@ -116,13 +90,13 @@ export default function ClientExperiencias({ children }: { children: React.React
                 </div>
             ) : (
                 // 🔓 Usuário Deslogado: Botão para Login
-                <div className="p-8 bg-white rounded-xl shadow-lg text-center border-t-4 border-[#FF8C00]">
-                    <p className="text-xl text-[#1A1A1A] mb-4">
+                <div className="p-8 bg-white rounded-xl shadow-lg text-center border-b-4 border-rebu-primary">
+                    <p className="text-xl text-rebu-secundary mb-4">
                         Faça login para deixar seu comentário!
                     </p>
                     <button 
                         onClick={handleLoginGoogle}
-                        className="inline-flex items-center justify-center bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300 shadow-md"
+                        className="mt-8 inline-block bg-rebu-primary text-rebu-secondary font-bold py-3 px-8 rounded-lg text-lg shadow-lg shadow-rebu-primary/50 hover:bg-rebu-secondary hover:text-rebu-soft hover:shadow-rebu-primary/60 transition duration-300 transform hover:scale-105"
                     >
                         Entrar com Google
                     </button>
@@ -133,10 +107,6 @@ export default function ClientExperiencias({ children }: { children: React.React
 
         {/* 🚨 SEÇÃO 3: Renderiza o Server Component (DepoimentosList) que foi passado aqui! */}
         {children} 
-
-      </main>
-
-      <Footer />
     </>
   );
 }
