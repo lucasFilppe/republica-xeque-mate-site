@@ -15,7 +15,7 @@ export const Footer = () => {
               <Link href="https://www.google.com/maps/dir//R.+do+Pilar,+61+-+Ouro+Preto,+MG,+35402-036/@-20.3866675,-43.5888749,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0xa40ae10da5f051:0x33312d8b7f3cd363!2m2!1d-43.5064694!2d-20.3866913?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank"  className="hover:text-[#FF8C00] transition">
                 República Xeque Mate
                 <br />
-                Rua do Pilar, 61, Ouro Preto - MG
+                Rua 14, Campus Universitário, Ouro Preto - MG
                 
               </Link>
             </p>
