@@ -12,7 +12,7 @@ const navItems = [
   
   { name: 'A Casa', href: '/a-casa' },
   { name: 'Vagas', href: '/processo-seletivo' },
-  { name: 'Experiências', href: '/experiencias' },
+  { name: 'Depoimentos', href: '/experiencias' },
   { name: 'Contato', href: '/contato' },
 ];
 
