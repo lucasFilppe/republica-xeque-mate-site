@@ -23,10 +23,11 @@ export const Footer = () => {
 
           {/* Redes Sociais */}
           <div className="w-full md:w-1/3">
-            <h4 className="text-lg font-bold mb-3 text-rebu-soft">Siga a Rebu</h4> {/* Título Laranja Intenso */}
+            <h4 className="text-lg font-bold mb-3 text-rebu-soft">Siga a Xeque mate</h4> {/* Título Laranja Intenso */}
             <div className="flex space-x-4 font-bold">
-              <a href="https://www.instagram.com/republicarebu/" target="_blank" rel="noopener noreferrer" className="hover:text-rebu-primary transition">Instagram</a> {/* Hover Laranja Chama */}
-              <a href="https://www.facebook.com/rebuouropreto/photos?locale=pt_BR" target="_blank" rel="noopener noreferrer" className="hover:text-rebu-primary transition">Facebook</a>
+              <a href="https://www.instagram.com/repxequemateop/" target="_blank" rel="noopener noreferrer" className="hover:text-rebu-primary transition">Instagram</a> {/* Hover Laranja Chama */}
+              <a href="https://www.facebook.com/republicaxeque.mate" target="_blank" rel="noopener noreferrer" className="hover
+              :text-rebu-primary transition">Facebook</a>
             </div>
           </div>
         </div>
