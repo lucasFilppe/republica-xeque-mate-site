@@ -55,7 +55,7 @@ export default function HomePage() {
             </p>
 
             <Link
-              href="/processo-seletivo"
+              href="/a-casa"
               className="mt-8 inline-block bg-rebu-primary text-rebu-secondary font-bold py-3 px-8 rounded-lg text-lg shadow-lg shadow-rebu-primary/50 hover:bg-rebu-secondary hover:text-rebu-soft hover:shadow-rebu-primary/60 transition duration-300 transform hover:scale-105"
             >
               Conheça a casa &rarr;
