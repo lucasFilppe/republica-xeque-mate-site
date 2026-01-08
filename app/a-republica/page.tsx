@@ -131,7 +131,7 @@ const CronologiaSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-rebu-acento text-white">
+    <section className="py-5 bg-rebu-acento text-white">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Título e Subtítulo */}
         <header className="text-center mb-16">
@@ -177,9 +177,9 @@ export default function ARepublica() {
 
       <main className="flex-grow">
         {/* Seção 2: Introdução e Contexto Histórico */}
-        <section className="py-16 bg-rebu-acento">
+        <section className="py-5 bg-rebu-acento">
           <div className="container mx-auto px-6 max-w-5xl">
-            <h2 className="text-3xl font-bold text-rebu-secondary mb-6 ">
+            <h2 className="text-3xl font-extrabold text-center text-rebu-secondary mb-12">
               Memórias da República Xeque Mate
             </h2>
 

@@ -54,7 +54,7 @@ export default function ClientExperiencias({ children }: { children: React.React
         
       
         {/* Seção 2: Formulário de Comentário */}
-        <section className="py-16 bg-rebu-acento">
+        <section className="py-5 bg-rebu-acento">
           <div className="container mx-auto px-6 max-w-3xl">
             <h2 className="text-3xl font-extrabold text-center text-rebu-secondary mb-12">
               Compartilhe sua Experiência

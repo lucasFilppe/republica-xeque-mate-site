@@ -62,7 +62,7 @@ export default async function DepoimentosList() {
   const depoimentosData = await getDepoimentos();
 
   return (
-    <section className="py-16 sm:py-20 bg-rebu-acento">
+    <section className="py-5 sm:py-20 bg-rebu-acento">
       <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-center text-rebu-secondary mb-10 sm:mb-12 flex items-center justify-center">
           <MessageSquare className="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-rebu-primary" /> Depoimentos

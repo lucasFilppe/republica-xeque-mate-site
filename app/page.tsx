@@ -102,7 +102,7 @@ export default function HomePage() {
         </section>
 
         {/* NOVO: Seção 4 - Depoimentos (A Voz dos Moradores) */}
-        <section className="py-16 bg-rebu-acento">
+        <section className="bg-rebu-acento">
             <div className="container mx-auto ">
                 
 
