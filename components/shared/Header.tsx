@@ -13,7 +13,7 @@ const navItems = [
   { name: 'A Casa', href: '/a-casa' },
   //{ name: 'Vagas', href: '/processo-seletivo' },
   { name: 'Depoimentos', href: '/experiencias' },
-  //{ name: 'Contato', href: '/contato' },
+  { name: 'Contato', href: '/contato' },
 ];
 
 export const Header = () => {
