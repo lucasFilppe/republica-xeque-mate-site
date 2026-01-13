@@ -15,10 +15,16 @@ Website institucional desenvolvido para a República Xeque-Mate, com foco em apr
 - Conteúdo informativo
 
 ## 🌐 Projeto online
-🔗 https://link-do-site.vercel.app
+🔗 https://republica-xeque-mate-site.vercel.app/
 
 ## 📷 Preview
-(Adicione screenshots aqui)
+<p align="center">
+  <img src="./screenshots/home-desktop.png" width="800" />
+</p>
+
+<p align="center">
+  <img src="./screenshots/home-moblie.png" width="250" />
+</p>
 
 ## 💼 Observação
 Projeto real desenvolvido para fins institucionais.
