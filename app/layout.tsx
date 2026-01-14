@@ -24,9 +24,78 @@ const inter = Inter({
 });
 
 // Metadados para SEO da República Rebu
+
 export const metadata: Metadata = {
-  title: 'República Rebu - Ouro Preto | Primeira Federal Feminina',
-  description: 'O site oficial da República Rebu de Ouro Preto. Conheça a história, a rotina e o processo seletivo da primeira república federal feminina.',
+  metadataBase: new URL("https://republicaxequemate.com.br"),
+
+  title: {
+    default: "República Xeque Mate | Moradia Estudantil em Ouro Preto - UFOP",
+    template: "%s | República Xeque Mate",
+  },
+
+  description:
+    "A República Xeque Mate é uma moradia estudantil tradicional em Ouro Preto, próxima à UFOP. Ambiente acolhedor, estrutura completa e história universitária.",
+
+   icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+  
+  keywords: [
+    "república estudantil em Ouro Preto",
+    "moradia universitária UFOP",
+    "república masculina Ouro Preto",
+    "república Xeque Mate",
+    "casa de estudante Ouro Preto",
+    "república para universitários",
+  ],
+
+  authors: [{ name: "República Xeque Mate" }],
+  creator: "República Xeque Mate",
+  publisher: "República Xeque Mate",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "https://republicaxequemate.com.br",
+    siteName: "República Xeque Mate",
+    title: "República Xeque Mate | Moradia Estudantil em Ouro Preto",
+    description:
+      "Conheça a República Xeque Mate, uma tradicional república estudantil em Ouro Preto. Ideal para estudantes da UFOP.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "República Xeque Mate em Ouro Preto",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "República Xeque Mate | Moradia Estudantil em Ouro Preto",
+    description:
+      "Moradia estudantil tradicional em Ouro Preto para universitários da UFOP.",
+    images: ["/og-image.jpg"],
+  },
+
+  alternates: {
+    canonical: "https://republicaxequemate.com.br",
+  },
 };
 
 export default function RootLayout({
