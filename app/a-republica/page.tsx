@@ -286,8 +286,6 @@ export default function ARepublica() {
         <CronologiaSection />
         
       </main>
-
-      <Footer />
     </>
   );
 }

@@ -34,18 +34,19 @@ export default function HomePage() {
 
       <main className="flex-grow">
         {/* HERO */}
-        <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center bg-rebu-secondary overflow-hidden">
+        <section className="relative h-[50vh] md:h-[70vh] flex items-center justify-center bg-rebu-secondary overflow-hidden">
           <Image
             src="/principal.jpeg"
-            alt="Fachada da República Rebu em Ouro Preto"
+            alt="Fachada da República xeque mate em Ouro Preto"
             fill
+            fetchPriority="high"
             style={{ objectFit: "cover" }}
             className="opacity-40"
             priority
           />
 
           <div className="relative z-10 text-center px-4 max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-black text-rebu-soft leading-tight drop-shadow-lg">
+            <h1 className="text-4xl md:text-5xl font-black text-rebu-soft leading-tight drop-shadow-lg">
               República Xeque Mate – Moradia Estudantil em Ouro Preto
             </h1>
 
@@ -118,7 +119,6 @@ export default function HomePage() {
         </section>
       </main>
 
-      <Footer />
     </>
   );
 }

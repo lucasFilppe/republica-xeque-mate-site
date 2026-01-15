@@ -170,8 +170,6 @@ export default function ACasa() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }

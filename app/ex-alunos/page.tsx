@@ -598,7 +598,7 @@ export default function Memorial() {
         
       </main>
 
-      <Footer />
+    
     </>
   );
 }

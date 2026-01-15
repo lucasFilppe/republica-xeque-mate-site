@@ -4,6 +4,7 @@ import './globals.css';
 
 import { Inter, Oswald } from 'next/font/google';
 import AuthProvider from '../components/shared/SessionProvider'; 
+import { Footer } from '@/components/shared/Footer';
 
 const oswald = Oswald({ 
   subsets: ['latin'], 
@@ -77,6 +78,7 @@ export default function RootLayout({
           {children}
           <Analytics />
         </AuthProvider>
+        <Footer/>
       </body>
     </html>
   );

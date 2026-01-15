@@ -4,6 +4,7 @@ import { Timestamp } from "firebase-admin/firestore";
 import { MessageSquare, User } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import { Footer } from "@/components/shared/Footer";
 
 interface Depoimento {
   id: string;
@@ -62,6 +63,7 @@ export default async function DepoimentosList() {
   const depoimentosData = await getDepoimentos();
 
   return (
+    <>
     <section className="py-5 sm:py-20 bg-rebu-acento">
       <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-center text-rebu-secondary mb-10 sm:mb-12 flex items-center justify-center">
@@ -111,13 +113,18 @@ export default async function DepoimentosList() {
               </div>
             ))
           ) : (
-            <p className="col-span-1 md:col-span-2 text-center text-base sm:text-lg text-rebu-secondary p-5 border rounded-lg bg-gray-50">
-              💌 Seja a primeira a deixar um depoimento! Compartilhe sua experiência.
+            
+            <p className="col-span-1 md:col-span-2 text-center text-base sm:text-lg text-rebu-secondary p-5 border-rebu-primary rounded-lg bg-rebu-soft">
+              Seja a primeira pessoa a deixar um depoimento! Compartilhe sua experiência.
+            
             </p>
+            
           )}
         </div>
       </div>
     </section>
+    
+    </>
   );
 }
 

@@ -131,7 +131,6 @@ export default function Contato() {
         </div>
       </section>
     </main>
-      <Footer />
     </>
   );
 }
