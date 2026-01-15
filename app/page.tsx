@@ -2,10 +2,10 @@ import { Header } from "../components/shared/Header";
 import { Footer } from "../components/shared/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import DepoimentosList from ".//experiencias/DepoimentosList";
-import ClientExperiencias from ".//experiencias/ClientExperiencias";
+import DepoimentosList from "./depoimentos/DepoimentosList";
+import ClientExperiencias from "./depoimentos/ClientExperiencias";
 import { Briefcase, Gavel, Users, Heart } from "lucide-react";
-import ExperienciasPage from "./experiencias/page";
+import ExperienciasPage from "./depoimentos/page";
 
 // Componente Reutilizável para destacar um pilar da República
 // Componente Reutilizável para destacar um pilar da República

@@ -44,15 +44,10 @@ const socialLinks = [
   },
 ];
 
+
 // O BLOCO 'metadata' FOI REMOVIDO DAQUI E MOVIDO PARA 'app/contato/layout.tsx'
 
 export default function Contato() {
-  // Simples função de submissão
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    alert("Mensagem enviada! A República Rebu entrará em contato em breve.");
-    // Lógica de envio real (API, Formspree, etc.) viria aqui
-  };
 
   return (
     <>

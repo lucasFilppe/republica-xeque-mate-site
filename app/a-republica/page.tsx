@@ -5,13 +5,46 @@ import { Footer } from "../../components/shared/Footer"; // Ajuste o caminho con
 import Link from "next/link";
 import React from 'react';
 import { FaCalendarAlt, FaHome, FaGraduationCap, FaMusic, FaDog } from 'react-icons/fa'; // Importando ícones
+import type { Metadata } from "next";
 
-// 🎯 Metadados para SEO no App Router
-export const metadata = {
-  title: "A República Rebu | História, Valores e Fundação",
+// 🎯 Metadados SEO — Página "A República"
+export const metadata: Metadata = {
+  title: {
+    absolute: "A República Xeque Mate | Tradição, Valores e História em Ouro Preto",
+  },
+
   description:
-    "Conheça a história da República Rebu, a primeira federal feminina de Ouro Preto, fundada em 1975, e seus pilares de convivência.",
+    "Conheça a história da República Xeque Mate em Ouro Preto. Tradição universitária desde 1982, valores, organização interna e vida estudantil próxima à UFOP.",
+
+  keywords: [
+    "república estudantil em Ouro Preto",
+    "república Xeque Mate",
+    "república universitária UFOP",
+    "tradição universitária Ouro Preto",
+    "república federal masculina",
+    "vida estudantil UFOP",
+  ],
+
+  openGraph: {
+    title: "A República Xeque Mate | Tradição Universitária em Ouro Preto",
+    description:
+      "Descubra a história, os valores e a tradição da República Xeque Mate em Ouro Preto. Uma república estudantil com identidade, organização e espírito universitário.",
+    url: "https://republicaxequemate.com.br/a-republica",
+    images: [
+      {
+        url: "/og-republica.jpg",
+        width: 1200,
+        height: 630,
+        alt: "República Xeque Mate em Ouro Preto",
+      },
+    ],
+  },
+
+  alternates: {
+    canonical: "https://republicaxequemate.com.br/a-republica",
+  },
 };
+
 
 
 // 1. DEFINIÇÃO DA INTERFACE PARA O EVENTO

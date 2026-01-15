@@ -463,11 +463,46 @@ const exMoradorasDatah = [
 // OBS: Você precisará de 19 imagens diferentes na sua pasta public/memorial/ para que não haja erro de chave duplicada ou imagem repetida.
 
 // 🎯 Metadados para SEO no App Router
-export const metadata = {
-  title: "Memorial da Rebu | Homenagem às Ex-Moradoras",
+import type { Metadata } from "next";
+
+// 🎯 Metadados SEO — Página Ex-Alunos
+export const metadata: Metadata = {
+  title: {
+    absolute: "Ex-Alunos da República Xeque Mate | História, Legado e Conquistas",
+  },
+
   description:
-    "Conheça o legado das veteranas e homenageados que construíram a história da República Rebu, a primeira república federal feminina de Ouro Preto, desde 1975.",
+    "Conheça os ex-alunos da República Xeque Mate em Ouro Preto. Histórias, trajetórias profissionais, legado acadêmico e a contribuição de quem construiu a tradição da casa.",
+
+  keywords: [
+    "ex-alunos república Xeque Mate",
+    "república estudantil Ouro Preto",
+    "república universitária UFOP",
+    "ex-moradores república estudantil",
+    "trajetória acadêmica UFOP",
+    "história república estudantil",
+  ],
+
+  openGraph: {
+    title: "Ex-Alunos da República Xeque Mate | Legado Universitário",
+    description:
+      "A história da República Xeque Mate continua com seus ex-alunos. Conheça trajetórias, histórias e o legado deixado por quem passou pela casa.",
+    url: "https://republicaxequemate.com.br/ex-alunos",
+    images: [
+      {
+        url: "/og-ex-alunos.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ex-alunos da República Xeque Mate",
+      },
+    ],
+  },
+
+  alternates: {
+    canonical: "https://republicaxequemate.com.br/ex-alunos",
+  },
 };
+
 
 // Componente Card da Moradora
 const MoradoraCard = ({

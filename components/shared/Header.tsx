@@ -8,11 +8,11 @@ import { Menu, X } from 'lucide-react';
 const navItems = [
   { name: 'Sobre', href: '/' },
   { name: 'História', href: '/a-republica' },
-  { name: 'Ex Alunos', href: '/memorial' },
+  { name: 'Ex Alunos', href: '/ex-alunos' },
   
   { name: 'A Casa', href: '/a-casa' },
   //{ name: 'Vagas', href: '/processo-seletivo' },
-  { name: 'Depoimentos', href: '/experiencias' },
+  { name: 'Depoimentos', href: '/depoimentos' },
   { name: 'Contato', href: '/contato' },
 ];
 

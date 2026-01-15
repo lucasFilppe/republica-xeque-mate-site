@@ -4,13 +4,43 @@ import { Header } from "../../components/shared/Header";
 import { Footer } from "../../components/shared/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next"
 import { Bed, Utensils, Zap, Home, Gavel, Heart } from "lucide-react"; // Importados todos os ícones necessários
 
 // 🎯 Metadados para SEO no App Router
-export const metadata = {
-  title: "A Casa Rebu | Estrutura, Rotina e Galeria de Fotos",
+export const metadata: Metadata = {
+  title: {
+    absolute: "A Casa da República Xeque Mate | Ouro Preto - UFOP",
+  },
+
   description:
-    "Conheça a estrutura da República Rebu em Ouro Preto, incluindo quartos, áreas comuns, e a organização da rotina de convivência.",
+    "Conheça a casa da República Xeque Mate em Ouro Preto. Estrutura completa, quartos, áreas comuns e localização privilegiada próxima à UFOP.",
+
+  keywords: [
+    "república estudantil em Ouro Preto",
+    "república Xeque Mate",
+    "moradia universitária UFOP",
+    "república próxima à UFOP",
+  ],
+
+  openGraph: {
+    title: "A Casa da República Xeque Mate | Ouro Preto - UFOP",
+    description:
+      "Veja como é a casa da República Xeque Mate em Ouro Preto: estrutura, quartos e áreas comuns.",
+    url: "https://republicaxequemate.com.br/a-casa",
+    images: [
+      {
+        url: "/og-casa.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Casa da República Xeque Mate em Ouro Preto",
+      },
+    ],
+  },
+
+  alternates: {
+    canonical: "https://republicaxequemate.com.br/a-casa",
+  },
 };
 
 // Componente para um card de Rotina Reutilizável
@@ -82,7 +112,6 @@ export default function ACasa() {
         </section>
         */}
         {/* Seção 3: Rotina e Organização */}
-   
 
         {/* Seção 4: Galeria de Fotos */}
         <section className="py-5 bg-rebu-acento">
@@ -127,17 +156,16 @@ export default function ACasa() {
 
             {/* Chamada para o Processo Seletivo (CTA Final) */}
             <div className="text-center mt-12 p-6 bg-rebu-soft rounded-lg shadow-lg hover:shadow-xl transition border-b-4 border-rebu-primary hover:border-[#FF8C00]">
-              
               <h3 className="text-xl font-bold text-rebu-secondary mb-3">
                 Gostou da casa?
               </h3>
               <p className="text-rebu-secondary">Agende uma visita</p>
               <Link
-              href="/processo-seletivo"
-              className="mt-8 inline-block bg-rebu-primary text-rebu-secondary font-bold py-3 px-8 rounded-lg text-lg shadow-lg shadow-rebu-primary/50 hover:bg-rebu-secondary hover:text-rebu-soft hover:shadow-rebu-primary/60 transition duration-300 transform hover:scale-105"
-            >
-              Contato &rarr;
-            </Link>
+                href="/processo-seletivo"
+                className="mt-8 inline-block bg-rebu-primary text-rebu-secondary font-bold py-3 px-8 rounded-lg text-lg shadow-lg shadow-rebu-primary/50 hover:bg-rebu-secondary hover:text-rebu-soft hover:shadow-rebu-primary/60 transition duration-300 transform hover:scale-105"
+              >
+                Contato &rarr;
+              </Link>
             </div>
           </div>
         </section>
