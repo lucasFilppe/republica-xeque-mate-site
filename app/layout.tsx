@@ -52,7 +52,7 @@ export const metadata: Metadata = {
       "Conheça a República Xeque Mate, uma tradicional república estudantil em Ouro Preto.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "República Xeque Mate em Ouro Preto",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
 };
 
