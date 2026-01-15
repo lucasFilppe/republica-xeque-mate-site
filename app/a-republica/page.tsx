@@ -213,9 +213,9 @@ export default function ARepublica() {
         <section className="py-5 bg-rebu-acento">
           <div className="container mx-auto px-6 max-w-5xl">
             <h2 className="text-3xl font-extrabold text-center text-rebu-secondary mb-12">
-              Memórias da República Xeque Mate
+              Onde a Tradição encontra o Futuro, mantendo viva a chama que iniciou nossa jornada
             </h2>
-
+         
             <p className="text-lg text-rebu-secondary mb-6 leading-relaxed">
               A República Socialista Xeque-Mate foi fundada em 1979 pelos
               moradores Renzo, Ibrain, Orcelino, Paulo e Odilon, na rua
