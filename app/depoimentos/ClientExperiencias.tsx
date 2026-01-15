@@ -57,8 +57,11 @@ export default function ClientExperiencias({ children }: { children: React.React
         <section className="py-5 bg-rebu-acento">
           <div className="container mx-auto px-6 max-w-3xl">
             <h2 className="text-2xl font-extrabold text-center text-rebu-secondary mb-12">
-              Compartilhe sua Experiência
+              Quem vive, recomenda
             </h2>
+             <p className="text-center text-rebu-secondary mb-8">
+              Nada melhor do que ouvir de quem chama a Xeque Mate de lar. Descubra como é a nossa rotina, a parceria nos estudos e a amizade que levamos para a vida.
+            </p>
 
             {/* FORMULÁRIO CONDICIONAL */}
             {isAuthenticated ? (

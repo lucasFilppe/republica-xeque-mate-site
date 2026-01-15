@@ -34,34 +34,41 @@ export default function HomePage() {
 
       <main className="flex-grow">
         {/* HERO */}
-        <section className="relative h-[50vh] md:h-[70vh] flex items-center justify-center bg-rebu-secondary overflow-hidden">
+        <section className="relative h-[65vh] md:h-[80vh] flex items-center justify-center bg-rebu-secondary overflow-hidden">
           <Image
             src="/principal.jpeg"
-            alt="Fachada da República xeque mate em Ouro Preto"
+            alt="Fachada da República Xeque Mate em Ouro Preto"
             fill
             fetchPriority="high"
-            style={{ objectFit: "cover" }}
-            className="opacity-40"
             priority
+            className="object-cover"
           />
 
-          <div className="relative z-10 text-center px-4 max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-black text-rebu-soft leading-tight drop-shadow-lg">
-              República Xeque Mate – Moradia Estudantil em Ouro Preto
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+
+          <div className="relative z-10 text-center px-4 max-w-xl">
+            <h1 className="text-3xl md:text-6xl font-black text-rebu-soft leading-tight drop-shadow-lg">
+              Mais que uma república. <br />
+              Uma história vivida em Ouro Preto.
             </h1>
 
-            <p className="mt-4 text-xl md:text-3xl text-rebu-primary font-semibold italic drop-shadow-md">
-              República estudantil masculina em Ouro Preto, próxima à UFOP
+            <p className="mt-4 text-base md:text-2xl text-rebu-primary font-semibold drop-shadow-md">
+              República estudantil masculina próxima à UFOP
               <span className="text-rebu-soft"> desde 1982</span>
             </p>
 
             <Link
               href="/a-casa"
-              aria-label="Conheça a casa da República Xeque Mate em Ouro Preto"
-              className="mt-8 inline-block bg-rebu-primary text-rebu-secondary font-bold py-3 px-8 rounded-lg text-lg shadow-lg shadow-rebu-primary/50 hover:bg-rebu-secondary hover:text-rebu-soft hover:shadow-rebu-primary/60 transition duration-300 transform hover:scale-105"
+              className="mt-8 inline-flex items-center justify-center bg-rebu-primary text-rebu-secondary font-bold h-12 px-8 rounded-xl text-base shadow-lg shadow-rebu-primary/40 hover:bg-rebu-secondary hover:text-rebu-soft transition-all duration-300 active:scale-95"
             >
-              Conheça a casa &rarr;
+              Conheça a casa →
             </Link>
+          </div>
+
+          {/* Scroll indicator mobile */}
+          <div className="absolute bottom-4 text-rebu-soft text-xs opacity-80 animate-bounce">
+            ↓ Role para conhecer
           </div>
         </section>
 
@@ -71,7 +78,7 @@ export default function HomePage() {
           {/* Mantendo o cinza claro, que é a cor de fundo */}
           <div className="container mx-auto px-6">
             {/* Título da Seção (Ajustando a cor do texto para ser a principal/escura) */}
-            <h2 className="text-3xl font-extrabold text-center text-rebu-secondary mb-12">
+            <h2 className="text-2xl font-extrabold text-center text-rebu-secondary mb-12">
               Valores da República Xeque Mate em Ouro Preto
             </h2>
 
@@ -103,9 +110,7 @@ export default function HomePage() {
 
         {/* NOVO: Seção 4 - Depoimentos (A Voz dos Moradores) */}
         <section className="bg-rebu-acento">
-          <h2 className="text-3xl font-extrabold text-center text-rebu-secondary mb-8">
-            Depoimentos de ex-moradores da República Xeque Mate
-          </h2>
+          
 
           <div className="container mx-auto ">
             {/* REPLICAÇÃO DA LÓGICA DE EXPERIÊNCIAS:
@@ -118,7 +123,6 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-
     </>
   );
 }

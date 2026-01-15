@@ -565,8 +565,11 @@ export default function Memorial() {
         <section id="veteranas" className="py-5 bg-rebu-acento">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-extrabold text-center text-rebu-secondary mb-12">
-              Todas os nossos ex alunos
+              Onde Grandes Trajetórias Começam
             </h2>
+            <p className="text-center text-rebu-secondary mb-8">
+             Nossa história vai além da formatura. Aqui, você entra para uma rede de profissionais de elite e garante um ambiente que impulsiona seus estudos e abre portas para o seu futuro
+            </p>
 
             {/* CORREÇÃO: Grid ajustado para no MÁXIMO 3 colunas em telas grandes */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

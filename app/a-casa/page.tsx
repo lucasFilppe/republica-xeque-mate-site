@@ -4,7 +4,7 @@ import { Header } from "../../components/shared/Header";
 import { Footer } from "../../components/shared/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next"
+import type { Metadata } from "next";
 import { Bed, Utensils, Zap, Home, Gavel, Heart } from "lucide-react"; // Importados todos os ícones necessários
 
 // 🎯 Metadados para SEO no App Router
@@ -116,9 +116,13 @@ export default function ACasa() {
         {/* Seção 4: Galeria de Fotos */}
         <section className="py-5 bg-rebu-acento">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-extrabold text-center text-rebu-secondary mb-12">
-              Veja a xeque mate por dentro
+            <h2 className="text-3xl font-extrabold text-center text-rebu-secondary mb-4">
+              Descubra sua futura casa em Ouro Preto
             </h2>
+            <p className="text-center text-rebu-secondary mb-8">
+              Experimente o ambiente acolhedor da República Xeque Mate, faça
+              amigos, e viva a experiência universitária completa.
+            </p>
 
             {/* Galeria de 6 Itens com Grid Responsivo */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -156,15 +160,19 @@ export default function ACasa() {
 
             {/* Chamada para o Processo Seletivo (CTA Final) */}
             <div className="text-center mt-12 p-6 bg-rebu-soft rounded-lg shadow-lg hover:shadow-xl transition border-b-4 border-rebu-primary hover:border-[#FF8C00]">
-              <h3 className="text-xl font-bold text-rebu-secondary mb-3">
-                Gostou da casa?
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                Quer sentir a energia da Xeque Mate de perto?
               </h3>
-              <p className="text-rebu-secondary">Agende uma visita</p>
+              <p className="text-rebu-secoundary mb-3 max-w-xl mx-auto">
+                As fotos não mostram tudo. Venha tomar um café conosco, conhecer
+                os moradores e tirar suas dúvidas sobre a UFOP e a vida em Ouro
+                Preto.
+              </p>
               <Link
-                href="/processo-seletivo"
-                className="mt-8 inline-block bg-rebu-primary text-rebu-secondary font-bold py-3 px-8 rounded-lg text-lg shadow-lg shadow-rebu-primary/50 hover:bg-rebu-secondary hover:text-rebu-soft hover:shadow-rebu-primary/60 transition duration-300 transform hover:scale-105"
+                href="https://wa.me/seunumerowhatsapp" // Link direto para o Zap converte mais que página de contato
+                className="inline-flex items-center gap-2 bg-rebu-primary text-rebu-secondary font-bold py-4 px-10 rounded-full text-lg transition duration-300 hover:bg-white hover:scale-105"
               >
-                Contato &rarr;
+                Agendar visita pelo WhatsApp &rarr;
               </Link>
             </div>
           </div>
