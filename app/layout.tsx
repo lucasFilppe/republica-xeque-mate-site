@@ -1,26 +1,31 @@
-import type { Metadata } from 'next';
-import { Analytics } from '@vercel/analytics/next';
-import './globals.css';
+import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
-import { Inter, Oswald } from 'next/font/google';
-import AuthProvider from '../components/shared/SessionProvider'; 
-import { Footer } from '@/components/shared/Footer';
-import WhatsAppFloatingButton from '@/components/shared/WhatsAppFloatingButton';
+import { Inter, Oswald } from "next/font/google";
+import AuthProvider from "../components/shared/SessionProvider";
+import { Footer } from "@/components/shared/Footer";
+import WhatsAppFloatingButton from "@/components/shared/WhatsAppFloatingButton";
 
-const oswald = Oswald({ 
-  subsets: ['latin'], 
-  variable: '--font-titulo',
-  display: 'swap' 
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-titulo",
+  display: "swap",
 });
 
-const inter = Inter({ 
-  subsets: ['latin'], 
-  variable: '--font-sans',
-  display: 'swap' 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
- export const metadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL("https://republicaxequemate.com.br"),
+
+  verification: {
+    // ATUALIZE COM O NOVO CÓDIGO AQUI:
+    google: "Mkbb_BD_2m7tAacm9xXnRd9CV2cNR56caX1B7FXdKGc", 
+  },
 
   title: {
     default: "República Xeque Mate | Moradia Estudantil em Ouro Preto - UFOP",
@@ -56,7 +61,8 @@ const inter = Inter({
     url: "https://republicaxequemate.com.br",
     siteName: "República Xeque Mate",
     title: "República Xeque Mate | Moradia Estudantil em Ouro Preto",
-    description: "Tradição, estudo e irmandade em Ouro Preto. Conheça a Xeque Mate e more perto da UFOP.",
+    description:
+      "Tradição, estudo e irmandade em Ouro Preto. Conheça a Xeque Mate e more perto da UFOP.",
     images: [
       {
         url: "/og-image.png", // O Next.js resolverá para a URL absoluta usando o metadataBase
@@ -87,10 +93,9 @@ export default function RootLayout({
           {children}
           <Analytics />
         </AuthProvider>
-        <WhatsAppFloatingButton/>
-        <Footer/>
+        <WhatsAppFloatingButton />
+        <Footer />
       </body>
     </html>
   );
 }
-
