@@ -19,7 +19,7 @@ const inter = Inter({
   display: 'swap' 
 });
 
-export const metadata: Metadata = {
+ export const metadata: Metadata = {
   metadataBase: new URL("https://republicaxequemate.com.br"),
 
   title: {
@@ -28,19 +28,26 @@ export const metadata: Metadata = {
   },
 
   description:
-    "A República Xeque Mate é uma moradia estudantil tradicional em Ouro Preto, próxima à UFOP.",
+    "A República Xeque Mate oferece moradia estudantil tradicional em Ouro Preto, com localização privilegiada para alunos da UFOP. Venha conhecer nossa história!",
+
+  // Adicionando Robots para garantir indexação
+  robots: {
+    index: true,
+    follow: true,
+  },
 
   icons: {
     icon: "/favicon.ico?v=2",
     shortcut: "/favicon.ico?v=2",
-    apple: "/favicon.ico?v=2",
+    apple: "/apple-touch-icon.png", // Geralmente Apple usa um ícone PNG de 180x180
   },
 
   keywords: [
     "república estudantil em Ouro Preto",
     "moradia universitária UFOP",
     "república masculina Ouro Preto",
-    "república Xeque Mate",
+    "vagas em república Ouro Preto",
+    "República Xeque Mate",
   ],
 
   openGraph: {
@@ -49,20 +56,21 @@ export const metadata: Metadata = {
     url: "https://republicaxequemate.com.br",
     siteName: "República Xeque Mate",
     title: "República Xeque Mate | Moradia Estudantil em Ouro Preto",
-    description:
-      "Conheça a República Xeque Mate, uma tradicional república estudantil em Ouro Preto.",
+    description: "Tradição, estudo e irmandade em Ouro Preto. Conheça a Xeque Mate e more perto da UFOP.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.png", // O Next.js resolverá para a URL absoluta usando o metadataBase
         width: 1200,
         height: 630,
-        alt: "República Xeque Mate em Ouro Preto",
+        alt: "Fachada da República Xeque Mate em Ouro Preto",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
+    title: "República Xeque Mate | Moradia Estudantil",
+    description: "Vagas disponíveis para estudantes da UFOP em Ouro Preto.",
     images: ["/og-image.png"],
   },
 };
