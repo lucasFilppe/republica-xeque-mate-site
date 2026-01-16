@@ -105,25 +105,25 @@ const CronologiaSection: React.FC = () => {
       year: '1984 - 1996',
       icon: <FaCalendarAlt />,
       title: 'A Era da Farmácia',
-      content: 'Período em que a república foi habitada **somente por estudantes de Farmácia**. Marcado pela "Festa do Esfrega-Esfrega" e o Primeiro Encontro dos Filhos da Puta da Escola de Farmácia.',
+      content: 'Período em que a república foi habitada "somente por estudantes de Farmácia". Marcado pela "Festa do Esfrega-Esfrega" e o Primeiro Encontro dos Filhos da Puta da Escola de Farmácia.',
     },
     {
       year: '1995',
       icon: <FaMusic />,
       title: 'O Hino',
-      content: 'Escolha do **Hino da República**: "A Filha da Chiquita Bacana". Reforma e ampliação da sede com recursos próprios.',
+      content: 'Escolha do "Hino da República": "A Filha da Chiquita Bacana". Reforma e ampliação da sede com recursos próprios.',
     },
     {
       year: '1997',
       icon: <FaHome />,
       title: 'A Grande Enxurrada e a 2ª Sede',
-      content: 'Perda total da primeira sede devido a fortes chuvas. Mudança forçada para a **Rua Dr. Cláudio de Lima** (via Vila São José).',
+      content: 'Perda total da primeira sede devido a fortes chuvas. Mudança forçada para a "Rua Dr. Cláudio de Lima" (via Vila São José).',
     },
     {
       year: '1998 - 1999',
       icon: <FaHome />,
       title: 'Anos de Itinerância',
-      content: 'Novas mudanças de sede: em 1998, para a **Rua Direita**; em 1999, para a **Rua Paraná**. Período de grandes festas (Carnaval e Festa do 12).',
+      content: 'Novas mudanças de sede: em 1998, para a "Rua Direita"; em 1999, para a *"Rua Paraná". Período de grandes festas (Carnaval e Festa do 12).',
     },
     {
       year: '2002',
@@ -141,25 +141,25 @@ const CronologiaSection: React.FC = () => {
       year: '2012',
       icon: <FaDog />,
       title: 'Chegada da Buneka e Nova Sede Temporária',
-      content: 'Chegada da icônica moradora canina, **a Buneka** 🐕. Mudança para a **Rua Getúlio Vargas**.',
+      content: 'Chegada da icônica moradora canina, "a Buneka" 🐕. Mudança para a "Rua Getúlio Vargas".',
     },
     {
       year: '2013',
       icon: <FaCalendarAlt />,
       title: 'O Título',
-      content: '**Campeã do Campeonato de Repúblicas**.',
+      content: "Campeã do Campeonato de Repúblicas",
     },
     {
       year: '2014',
       icon: <FaHome />,
       title: 'A Última Parada Antes',
-      content: 'Mudança para a **Rua Conselheiro Quintiliano**. Realização da histórica **Festa Junina Xeque-Mate e Aquarius**.',
+      content: 'Mudança para a "Rua Conselheiro Quintiliano". Realização da histórica "Festa Junina Xeque-Mate e Aquarius".',
     },
     {
       year: '2015',
       icon: <FaHome />,
       title: 'A Sede Definitiva',
-      content: 'Mudança (Setembro) e **Inauguração Oficial (11 de Outubro)** da sede própria no Campus Universitário. Resgate aprofundado da história.',
+      content: 'Mudança (Setembro) e "Inauguração Oficial (11 de Outubro)" da sede própria no Campus Universitário. Resgate aprofundado da história.',
     },
   ];
 
@@ -189,7 +189,7 @@ const CronologiaSection: React.FC = () => {
             Cada ano é uma peça fundamental. Para conhecer os nomes, fotos e detalhes de cada era, visite nosso memorial.
           </p>
           <Link
-            href="/memorial"
+            href="/ex-alunos"
             className="mt-8 inline-block bg-rebu-primary text-rebu-secondary font-bold py-3 px-8 rounded-lg text-lg shadow-lg shadow-rebu-primary/50 hover:bg-rebu-secondary hover:text-rebu-soft hover:shadow-rebu-primary/60 transition duration-300 transform hover:scale-105"
           >
             Explorar o Memorial Completo &rarr;
@@ -242,7 +242,7 @@ export default function ARepublica() {
               familiares quanto a venda do imóvel lutando para que a república
               permanecesse lá enquanto ela fosse viva, sendo conhecida pelos
               moradores da época como seu &ldquo;anjo da guarda&rdquo; e D. Nadir, que era
-              considerada como a **mãe** dos xequemateanos durante várias
+              considerada como a &ldquo;mãe&rdquo; dos xequemateanos durante várias
               gerações. No período de 1984 a 1996 só podiam ingressar estudantes
               de farmácia, desta data em diante implantou a pluralidade de
               cursos que foi sadia e proveitosa para a república

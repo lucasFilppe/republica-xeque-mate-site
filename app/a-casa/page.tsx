@@ -169,7 +169,7 @@ export default function ACasa() {
                 Preto.
               </p>
               <Link
-                href="https://wa.me/seunumerowhatsapp" // Link direto para o Zap converte mais que página de contato
+                href="https://wa.me/31971527535" // Link direto para o Zap converte mais que página de contato
                 className="inline-flex items-center gap-2 bg-rebu-primary text-rebu-secondary font-bold py-4 px-10 rounded-full text-lg transition duration-300 hover:bg-white hover:scale-105"
               >
                 Agendar visita pelo WhatsApp &rarr;

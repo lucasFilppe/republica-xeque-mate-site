@@ -5,6 +5,7 @@ import './globals.css';
 import { Inter, Oswald } from 'next/font/google';
 import AuthProvider from '../components/shared/SessionProvider'; 
 import { Footer } from '@/components/shared/Footer';
+import WhatsAppFloatingButton from '@/components/shared/WhatsAppFloatingButton';
 
 const oswald = Oswald({ 
   subsets: ['latin'], 
@@ -78,6 +79,7 @@ export default function RootLayout({
           {children}
           <Analytics />
         </AuthProvider>
+        <WhatsAppFloatingButton/>
         <Footer/>
       </body>
     </html>
