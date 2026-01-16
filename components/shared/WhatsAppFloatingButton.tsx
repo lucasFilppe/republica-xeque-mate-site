@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { assets } from "@/assets/assets";
 
 export default function WhatsAppFloatingButton() {
   return (
